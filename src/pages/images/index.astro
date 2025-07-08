@@ -3,7 +3,7 @@ import MainLayout from '@layouts/MainLayout.astro'
 import { Image } from 'astro:assets'
 
 import post05 from '@images/post-05.png'
-
+import { Picture } from 'astro:assets'
 ---
 
 <MainLayout title="Imagenes">
@@ -17,6 +17,36 @@ import post05 from '@images/post-05.png'
   />
 
   <Image src={post05} width="250" height="250" alt="Imagen" />
+  <Image
+    src={post05}
+    quality="low"
+    style={{
+      width: '250px',
+      height: '250px',
+    }}
+    width="500"
+    height="500"
+    alt="Imagen"
+  />
+
+  <h1 class="text-white mt-10">Quality Low</h1>
+  <Image quality="low" src={post05} width="250" height="250" alt="Imagen" />
+
+  <h1 class="text-white mt-10">Quality High</h1>
+  <Image quality="high" src={post05} width="250" height="250" alt="Imagen" />
+
+  <h1 class="text-white mt-10">Formatos</h1>
+  <Image format="avif" src={post05} width="250" height="250" alt="Imagen" />
+
+  <h1 class="text-white mt-10">Picture</h1>
+  <Picture
+    widths={[240, 540, 720, post05.width]}
+    formats={['webp', 'avif', 'jpeg']}
+    src={post05}
+    width="250"
+    height="250"
+    alt="Imagen"
+  />
 
   <div
     style={{
