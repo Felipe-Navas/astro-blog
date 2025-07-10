@@ -19,7 +19,12 @@ const { title } = Astro.props
 
     <ClientRouter />
   </head>
-  <body class="bg-gray-900">
+  <body
+    style={{
+      background:
+        'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.25), transparent 70%), #000000',
+    }}
+  >
     <main class="mb-10 max-w-5xl m-auto px-2 py-2">
       <slot />
     </main>
